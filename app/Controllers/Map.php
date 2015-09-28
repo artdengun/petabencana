@@ -78,6 +78,6 @@ class Map extends Resources\Controller
         echo $val."--";
         flush();
         ob_flush();
-        usleep(1000);
+        usleep(500);
     }
 }

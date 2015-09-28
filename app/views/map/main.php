@@ -159,6 +159,40 @@
             L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                             attribution: 'map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>'
                         }).addTo(map);
+
+            var floodIcon = L.icon({
+                iconUrl: '<?php echo  $this->uri->getBaseUri(); ?>assets/img/disaster/floods.png',
+                // shadowUrl: 'leaf-shadow.png',
+
+                iconSize:     [30, 49], // size of the icon
+                // shadowSize:   [50, 64], // size of the shadow
+                iconAnchor:   [22, 49], // point of the icon which will correspond to marker's location
+                // shadowAnchor: [4, 62],  // the same for the shadow
+                popupAnchor:  [-3, -56] // point from which the popup should open relative to the iconAnchor
+            });
+            
+            var landslideIcon = L.icon({
+                iconUrl: '<?php echo  $this->uri->getBaseUri(); ?>assets/img/disaster/landslides.png',
+                // shadowUrl: 'leaf-shadow.png',
+
+                iconSize:     [30, 49], // size of the icon
+                // shadowSize:   [50, 64], // size of the shadow
+                iconAnchor:   [22, 49], // point of the icon which will correspond to marker's location
+                // shadowAnchor: [4, 62],  // the same for the shadow
+                popupAnchor:  [-3, -56] // point from which the popup should open relative to the iconAnchor
+            });
+
+            var twisterIcon = L.icon({
+                iconUrl: '<?php echo  $this->uri->getBaseUri(); ?>assets/img/disaster/twisters.png',
+                // shadowUrl: 'leaf-shadow.png',
+
+                iconSize:     [30, 49], // size of the icon
+                // shadowSize:   [50, 64], // size of the shadow
+                iconAnchor:   [22, 49], // point of the icon which will correspond to marker's location
+                // shadowAnchor: [4, 62],  // the same for the shadow
+                popupAnchor:  [-3, -56] // point from which the popup should open relative to the iconAnchor
+            });
+
             var mapMarkers = [];
 
             $(document).ready(function(){
@@ -224,7 +258,22 @@
                                     }
                                     else
                                     {
-                                        var marker = L.marker([rows.latitude, rows.langitude]).addTo(map);
+                                        tempIcon = {};
+                                        if (rows.jenis.toLowerCase() == 'banjir')
+                                        {
+                                            tempIcon = {icon: floodIcon};
+                                        }
+                                        else if (rows.jenis.toLowerCase() == 'tanah longsor')
+                                        {
+                                            tempIcon = {icon: landslideIcon};
+                                        }
+
+                                        else if (rows.jenis.toLowerCase() == 'puting beliung')
+                                        {
+                                            tempIcon = {icon: twisterIcon};
+                                        }
+
+                                        var marker = L.marker([rows.latitude, rows.langitude], tempIcon).addTo(map);
                                         var elemPopup = "<h4>"+rows.jenis+"</h4>"+
                                                         "<ul>"+
                                                         "<li>tanggal: "+rows.tanggal+"</li>"+
@@ -234,7 +283,7 @@
                                                         "<li>kerugian: "+rows.kerugian+"</li>"+
                                                         "</ul>"+
                                                         rows.keterangan+" ("+rows.langitude+","+rows.latitude+")";
-                                        
+
                                         marker.bindPopup(elemPopup);
                                         mapMarkers.push(marker);
                                         delete marker;
@@ -300,7 +349,24 @@
                                     }
                                     else
                                     {
-                                        var marker = L.marker([rows.latitude, rows.langitude]).addTo(map);
+                                        tempIcon = {};
+                                        if (rows.jenis.toLowerCase() == 'banjir')
+                                        {
+                                            tempIcon = {icon: floodIcon};
+                                        }
+
+                                        else if (rows.jenis.toLowerCase() == 'tanah longsor')
+                                        {
+                                            tempIcon = {icon: landslideIcon};
+                                        }
+
+                                        else if (rows.jenis.toLowerCase() == 'puting beliung')
+                                        {
+                                            tempIcon = {icon: twisterIcon};
+                                        }
+
+                                        var marker = L.marker([rows.latitude, rows.langitude], tempIcon).addTo(map);
+
                                         var elemPopup = "<h4>"+rows.jenis+"</h4>"+
                                                         "<ul>"+
                                                         "<li>tanggal: "+rows.tanggal+"</li>"+

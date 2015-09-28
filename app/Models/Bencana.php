@@ -11,7 +11,7 @@ class Bencana {
 
     public function get_initial_data()
     {
-    	$results = $this->db->results('SELECT * FROM  bencana order by tanggal desc limit 0, 20');
+    	$results = $this->db->results('SELECT * FROM  bencana order by tanggal desc limit 0, 50');
 
     	return $results;
     }
