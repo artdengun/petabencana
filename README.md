@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 README
 ======
 
@@ -33,3 +34,7 @@ Twlike, a twitter like simple app http://twlike.gopagoda.com/
 You can download more simple applications on this https://github.com/panada/samples repo.
 But remember, Panada core system are not included. You need to download it by your
 self at this repo https://github.com/panada/Panada/tree/master
+=======
+# petabencana
+Sebuah aplikasi peta sederhana bertopik bencana alam Indonesia (data dari BNPB, didapat dari data.go.id) dengan berbasiskan Panada web framework, Leaflet.js, JQuery, dan MySQL
+>>>>>>> 554db0f0a433fb1bc61a8c5b273d1015ace1d7bd
