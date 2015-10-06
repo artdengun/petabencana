@@ -5,3 +5,5 @@ Sebuah aplikasi peta sederhana bertopik bencana alam Indonesia (data dari BNPB, 
 * data tanah longsor (2010 - 2014)
 * dan data puting beliung (2010 - 2014)
 
+Berikut adalah contoh screenshot  dari antarmuka aplikasi:
+

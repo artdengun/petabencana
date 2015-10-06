@@ -13,7 +13,7 @@ return array(
     ),
 
     'vendor' => array(
-        'path' => GEAR.'vendors/'
+        'path' => GEAR.'vendor/'
     ),
 
     'alias' => array(
