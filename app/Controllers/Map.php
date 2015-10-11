@@ -10,6 +10,7 @@ class Map extends Resources\Controller
         $this->db = new Resources\Database;
         $this->bencana = new Models\Bencana;
         $this->simplehtmldom = Resources\Import::vendor('simplehtmldom/simple_html_dom');
+        
     }
 
     public function index()

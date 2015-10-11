@@ -124,14 +124,7 @@
             </div>
             <div class="col-xs-9">
                 <br/>
-                <canvas id="myChart" width="900" height="400"></canvas>
-                <br/>
-                <canvas id="myChart1" width="900" height="400"></canvas>
-                <br/>
-                <canvas id="myChart2" width="900" height="400"></canvas>
-                <br/>
-                <canvas id="myChart3" width="900" height="400"></canvas>
-                
+                <canvas id="myChart" width="900" height="400"></canvas>                
             </div>
           </div>
         </div>
@@ -204,15 +197,6 @@
 
             var ctx = document.getElementById("myChart").getContext("2d");
             var myBarChart = new Chart(ctx).Bar(data, options);
-
-            var ctx = document.getElementById("myChart1").getContext("2d");
-            var myBarChart1 = new Chart(ctx).Bar(data, options);
-            
-            var ctx = document.getElementById("myChart2").getContext("2d");
-            var myBarChart2 = new Chart(ctx).Bar(data, options);
-            
-            var ctx = document.getElementById("myChart3").getContext("2d");
-            var myBarChart3 = new Chart(ctx).Bar(data, options);
             
         </script>
     </body>

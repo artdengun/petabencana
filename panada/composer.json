@@ -1,10 +1,14 @@
 {
+	"config": {
+        "vendor-dir": "vendor"
+    },
     "require": {
         "amphp/amp": "~1.0",
         "amphp/process": "0.1.*",
         "amphp/file": "0.1.*",
         "amphp/socket": "0.9.*",
         "amphp/cache": "0.1.*",
-        "react/react": "0.4.*"
+        "react/react": "0.4.*",
+		"phastlight/phastlight": "v0.3.0.1"
     }
 }
